@@ -14,7 +14,7 @@ import com.google.android.material.tabs.TabLayoutMediator;
 
 public class MainActivity extends AppCompatActivity {
     public class MyPagerAdapter extends FragmentStateAdapter {
-        private static final int NUM_TABS = 3;
+        private static final int NUM_TABS = 4;
         public MyPagerAdapter(FragmentManager fragmentManager, Lifecycle lifecycle) {
             super(fragmentManager, lifecycle);
         }
@@ -22,11 +22,12 @@ public class MainActivity extends AppCompatActivity {
         public Fragment createFragment(int position) {
             switch (position) {
                 case 0:
-                    return new BookViewFragment();
+                    return new TaskViewFragment();
                 case 1:
-                    return new WebViewFragment();
+                    return new RewardViewFragment();
                 case 2:
-                    return new MapViewFragment();
+                case 3:
+                    return new StatisticsViewFragment();
                 default:
                     return null;
             }
@@ -44,19 +45,25 @@ public class MainActivity extends AppCompatActivity {
         TabLayout tabLayout = findViewById(R.id.tabLayout);
         ViewPager2 viewPager = findViewById(R.id.viewPager);
 
+        getWindow().setBackgroundDrawableResource(R.drawable.background);
+        getWindow().setDimAmount(0.8f);
+
         MyPagerAdapter pagerAdapter = new MyPagerAdapter(getSupportFragmentManager(), getLifecycle());
         viewPager.setAdapter(pagerAdapter);
         new TabLayoutMediator(tabLayout, viewPager,
                 (tab, position) -> {
                     switch (position) {
                         case 0:
-                            tab.setText("图书");
+                            tab.setText("任务");
                             break;
                         case 1:
-                            tab.setText("新闻");
+                            tab.setText("奖励");
                             break;
                         case 2:
-                            tab.setText("地图");
+                            tab.setText("统计");
+                            break;
+                        case 3:
+                            tab.setText("更多");
                             break;
                     }
                 }
