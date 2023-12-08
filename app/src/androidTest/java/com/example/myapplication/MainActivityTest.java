@@ -41,6 +41,15 @@ public class MainActivityTest {
 
     @Test
     public void mainActivityTest() {
+        // Added a sleep statement to match the app's execution delay.
+        // The recommended way to handle such scenarios is to use Espresso idling resources:
+        // https://google.github.io/android-testing-support-library/docs/espresso/idling-resource/index.html
+        try {
+            Thread.sleep(500);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
         ViewInteraction recyclerView = onView(
                 allOf(withId(R.id.recycle_view_books),
                         childAtPosition(
@@ -48,15 +57,24 @@ public class MainActivityTest {
                                 0)));
         recyclerView.perform(actionOnItemAtPosition(0, longClick()));
 
-        ViewInteraction materialTextView = onView(
+        ViewInteraction textView = onView(
                 allOf(withId(android.R.id.title), withText("添加"),
                         childAtPosition(
                                 childAtPosition(
-                                        withId(android.R.id.content),
+                                        withClassName(is("com.android.internal.view.menu.ListMenuItemView")),
                                         0),
                                 0),
                         isDisplayed()));
-        materialTextView.perform(click());
+        textView.perform(click());
+
+        // Added a sleep statement to match the app's execution delay.
+        // The recommended way to handle such scenarios is to use Espresso idling resources:
+        // https://google.github.io/android-testing-support-library/docs/espresso/idling-resource/index.html
+        try {
+            Thread.sleep(700);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
 
         ViewInteraction appCompatEditText = onView(
                 allOf(withId(R.id.edit_book_price),

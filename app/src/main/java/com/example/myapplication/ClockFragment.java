@@ -5,13 +5,11 @@ import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
 import androidx.fragment.app.Fragment;
 
 import com.example.myapplication.view.CustomClockView;
 
 public class ClockFragment extends Fragment {
-
     private CustomClockView mClockView;
     private Handler mHandler;
     private Runnable mUpdateRunnable;
@@ -31,10 +29,14 @@ public class ClockFragment extends Fragment {
         };
         return view;
     }
+
+    @Override
     public void onResume() {
         super.onResume();
         mHandler.post(mUpdateRunnable);
     }
+
+    @Override
     public void onPause() {
         super.onPause();
         mHandler.removeCallbacks(mUpdateRunnable);
