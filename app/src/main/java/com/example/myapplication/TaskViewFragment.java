@@ -2,7 +2,7 @@ package com.example.myapplication;
 
 import static com.example.myapplication.MainActivity.data;
 import static com.example.myapplication.StatisticsViewFragment.index;
-import static com.example.myapplication.StatisticsViewFragment.yearlyIncome;
+import static com.example.myapplication.MainActivity.yearlyIncome;
 
 import android.app.Activity;
 import android.content.Context;
@@ -312,10 +312,8 @@ public class TaskViewFragment extends Fragment {
                     fileIn.close();
                 }
             }
-        } catch (IOException e) {
+        } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
-        } catch (ClassNotFoundException e) {
-            throw new RuntimeException(e);
         }
 
         adapter.setTaskList(taskManagers.get(0).getTaskList());

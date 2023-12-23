@@ -1,5 +1,8 @@
 package com.example.myapplication;
 
+import static com.example.myapplication.MainActivity.yearlyExpense;
+import static com.example.myapplication.MainActivity.yearlyIncome;
+
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -33,18 +36,11 @@ import lecho.lib.hellocharts.view.LineChartView;
 
 public class StatisticsViewFragment extends Fragment {
     public static int index = Calendar.getInstance().get(Calendar.MONTH);
-    public static ArrayList<Integer> yearlyIncome = new ArrayList<>();
-    public static ArrayList<Integer> yearlyExpense = new ArrayList<>();
     private String[] months = new String[]{"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_statisticsview, container, false);
         Spinner monthSpinner = view.findViewById(R.id.monthSpinner);
         TextView textView = view.findViewById(R.id.textView);
-
-        for(int i = 0;i < 12;i++) {
-            yearlyIncome.add(0);
-            yearlyExpense.add(0);
-        }
 
         try {
             FileInputStream fileIn = getContext().openFileInput("yearlyIncome.txt");

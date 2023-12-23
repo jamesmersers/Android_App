@@ -2,7 +2,7 @@ package com.example.myapplication;
 
 import static com.example.myapplication.MainActivity.data;
 import static com.example.myapplication.StatisticsViewFragment.index;
-import static com.example.myapplication.StatisticsViewFragment.yearlyExpense;
+import static com.example.myapplication.MainActivity.yearlyExpense;
 
 import android.app.Activity;
 import android.content.Context;

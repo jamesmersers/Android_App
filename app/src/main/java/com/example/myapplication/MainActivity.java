@@ -22,6 +22,8 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
     public static ArrayList<Integer> data = new ArrayList<>();
+    public static ArrayList<Integer> yearlyIncome = new ArrayList<>();
+    public static ArrayList<Integer> yearlyExpense = new ArrayList<>();
     public class MyPagerAdapter extends FragmentStateAdapter {
         private static final int NUM_TABS = 4;
         public MyPagerAdapter(FragmentManager fragmentManager, Lifecycle lifecycle) {
@@ -53,6 +55,11 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         data.add(0);
         data.add(0);
+
+        for(int i = 0;i < 12;i++) {
+            yearlyIncome.add(0);
+            yearlyExpense.add(0);
+        }
 
         try {
             FileInputStream fileIn = this.openFileInput("data.txt");
