@@ -32,7 +32,7 @@ public class EditTaskActivity extends AppCompatActivity {
         Bundle bundle = intent.getExtras();
         Task task = (Task) bundle.getSerializable("task");
         titleEditText.setText(task.getTitle());
-        rewardEditText.setText(task.getReward());
+        rewardEditText.setText(task.getReward() + "");
         limitCountEditText.setText(String.valueOf(task.getLimitCount()));
         if(task.getTaskType() == 2){
             limitCountLayout.setVisibility(View.GONE);

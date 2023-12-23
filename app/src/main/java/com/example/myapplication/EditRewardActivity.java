@@ -29,7 +29,7 @@ public class EditRewardActivity extends AppCompatActivity {
         Bundle bundle = intent.getExtras();
         Reward reward = (Reward) bundle.getSerializable("reward");
         titleEditText.setText(reward.getTitle());
-        rewardEditText.setText(reward.getCost());
+        rewardEditText.setText(reward.getCost() + "");
         limitCountEditText.setText(String.valueOf(reward.getLimitCount()));
 
         buttonEdit.setOnClickListener(v -> {
