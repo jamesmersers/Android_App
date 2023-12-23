@@ -1,6 +1,8 @@
 package com.example.myapplication;
 
 import static com.example.myapplication.MainActivity.data;
+import static com.example.myapplication.StatisticsViewFragment.index;
+import static com.example.myapplication.StatisticsViewFragment.yearlyExpense;
 
 import android.app.Activity;
 import android.content.Context;
@@ -96,6 +98,7 @@ public class RewardViewFragment extends Fragment {
                     }
                     rewardCheckbox.setChecked(false);
                     data.set(0,data.get(0) - reward.getCost());
+                    yearlyExpense.set(index,yearlyExpense.get(index) + reward.getCost());
                     try {
                         FileOutputStream fileOut = getContext().openFileOutput("rewards.txt", Context.MODE_PRIVATE);
                         ObjectOutputStream objectOut = new ObjectOutputStream(fileOut);
@@ -103,6 +106,9 @@ public class RewardViewFragment extends Fragment {
                         fileOut = getContext().openFileOutput("data.txt",Context.MODE_PRIVATE);
                         objectOut = new ObjectOutputStream(fileOut);
                         objectOut.writeObject(data);
+                        fileOut = getContext().openFileOutput("yearlyExpense.txt",Context.MODE_PRIVATE);
+                        objectOut = new ObjectOutputStream(fileOut);
+                        objectOut.writeObject(yearlyExpense);
                         objectOut.close();
                         fileOut.close();
                     } catch (IOException e) {

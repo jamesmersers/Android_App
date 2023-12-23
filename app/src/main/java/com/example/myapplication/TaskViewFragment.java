@@ -1,6 +1,8 @@
 package com.example.myapplication;
 
 import static com.example.myapplication.MainActivity.data;
+import static com.example.myapplication.StatisticsViewFragment.index;
+import static com.example.myapplication.StatisticsViewFragment.yearlyIncome;
 
 import android.app.Activity;
 import android.content.Context;
@@ -105,6 +107,7 @@ public class TaskViewFragment extends Fragment {
                             taskCheckbox.setChecked(false);
                         }
                         data.set(0,data.get(0) + task.getReward());
+                        yearlyIncome.set(index,yearlyIncome.get(index) + task.getReward());
                         write(new TaskManager(adapter.getTaskList()),currentTaskType);
                     }
                 }
@@ -223,6 +226,9 @@ public class TaskViewFragment extends Fragment {
             fileOut = getContext().openFileOutput("data.txt",Context.MODE_PRIVATE);
             objectOut = new ObjectOutputStream(fileOut);
             objectOut.writeObject(data);
+            fileOut = getContext().openFileOutput("yearlyIncome.txt",Context.MODE_PRIVATE);
+            objectOut = new ObjectOutputStream(fileOut);
+            objectOut.writeObject(yearlyIncome);
             objectOut.close();
             fileOut.close();
         } catch (IOException e) {

@@ -15,16 +15,22 @@
             android:layout_height="36dp" />
 
         <lecho.lib.hellocharts.view.LineChartView
-            android:id="@+id/lineChartView"
+            android:id="@+id/formerLineChartView"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:layout_height="637dp"
             android:layout_weight="1" />
 
-        <lecho.lib.hellocharts.view.PieChartView
-            android:id="@+id/pieChartView"
+        <lecho.lib.hellocharts.view.LineChartView
+            android:id="@+id/latterLineChartView"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:layout_height="637dp"
             android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:text="@string/statistics" />
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

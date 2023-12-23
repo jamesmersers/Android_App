@@ -36,7 +36,6 @@ dependencies {
     implementation("androidx.viewpager2:viewpager2:1.0.0")
     implementation("com.tencent.map:tencent-map-vector-sdk:4.3.4")
     implementation("com.github.lecho:hellocharts-library:1.5.8@aar")
-    implementation ("com.android.support:appcompat-v7:28.0.0")
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")

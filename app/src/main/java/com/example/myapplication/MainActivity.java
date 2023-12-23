@@ -57,7 +57,6 @@ public class MainActivity extends AppCompatActivity {
         try {
             FileInputStream fileIn = this.openFileInput("data.txt");
             if(fileIn !=null) {
-                fileIn = this.openFileInput("data.txt");
                 ObjectInputStream objectIn = new ObjectInputStream(fileIn);
                 data = (ArrayList<Integer>) objectIn.readObject();
                 objectIn.close();

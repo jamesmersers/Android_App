@@ -29,6 +29,7 @@
     <string name="logIn">登录</string>
     <string name="rewardBalance">奖励余额</string>
     <string name="totalTask">任务总数</string>
+    <string name="statistics">本月收入：\n本月支出：</string>
     <string-array name="task_types">
         <item>普通任务</item>
         <item>每日任务</item>
