@@ -6,6 +6,10 @@ android {
     namespace = "com.example.myapplication"
     compileSdk = 33
 
+    testOptions {
+        unitTests.isReturnDefaultValues = true
+    }
+
     defaultConfig {
         applicationId = "com.example.myapplication"
         minSdk = 21
@@ -29,7 +33,7 @@ android {
 }
 
 dependencies {
-
+    implementation("androidx.tracing:tracing:1.1.0")
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("com.google.android.material:material:1.9.0")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
@@ -37,6 +41,8 @@ dependencies {
     implementation("com.tencent.map:tencent-map-vector-sdk:4.3.4")
     implementation("com.github.lecho:hellocharts-library:1.5.8@aar")
     testImplementation("junit:junit:4.13.2")
-    androidTestImplementation("androidx.test.ext:junit:1.1.5")
-    androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
+    testImplementation("org.json:json:20231013")
+    androidTestImplementation("androidx.test.ext:junit:1.2.0-alpha02")
+    androidTestImplementation("androidx.test.espresso:espresso-core:3.6.0-alpha02")
+    androidTestImplementation("androidx.test.espresso:espresso-contrib:3.6.0-alpha02")
 }
