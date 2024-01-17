@@ -72,29 +72,21 @@ public class AddTaskActivity extends AppCompatActivity {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 int day = -1;
-                switch (buttonView.getId()) {
-                    case R.id.mondayCheckBox:
-                        day = Calendar.MONDAY;
-                        break;
-                    case R.id.tuesdayCheckBox:
-                        day = Calendar.TUESDAY;
-                        break;
-                    case R.id.wednesdayCheckBox:
-                        day = Calendar.WEDNESDAY;
-                        break;
-                    case R.id.thursdayCheckBox:
-                        day = Calendar.THURSDAY;
-                        break;
-                    case R.id.fridayCheckBox:
-                        day = Calendar.FRIDAY;
-                        break;
-                    case R.id.saturdayCheckBox:
-                        day = Calendar.SATURDAY;
-                        break;
-                    case R.id.sundayCheckBox:
-                        day = Calendar.SUNDAY;
-                        break;
-                }
+                int id = buttonView.getId();
+                if(id==R.id.mondayCheckBox)
+                    day=Calendar.MONDAY;
+                else if(id==R.id.tuesdayCheckBox)
+                    day=Calendar.TUESDAY;
+                else if(id==R.id.wednesdayCheckBox)
+                    day=Calendar.WEDNESDAY;
+                else if(id==R.id.thursdayCheckBox)
+                    day=Calendar.THURSDAY;
+                else if(id==R.id.fridayCheckBox)
+                    day=Calendar.FRIDAY;
+                else if(id==R.id.saturdayCheckBox)
+                    day=Calendar.SATURDAY;
+                else if(id==R.id.sundayCheckBox)
+                    day=Calendar.SUNDAY;
                 if (isChecked) {
                     if (!selectedDays.contains(day)) {
                         selectedDays.add(day);
