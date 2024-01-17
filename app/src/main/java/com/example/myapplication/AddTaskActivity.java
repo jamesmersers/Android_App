@@ -74,19 +74,19 @@ public class AddTaskActivity extends AppCompatActivity {
                 int day = -1;
                 int id = buttonView.getId();
                 if(id==R.id.mondayCheckBox)
-                    day=Calendar.MONDAY;
+                    day = Calendar.MONDAY;
                 else if(id==R.id.tuesdayCheckBox)
-                    day=Calendar.TUESDAY;
+                    day = Calendar.TUESDAY;
                 else if(id==R.id.wednesdayCheckBox)
-                    day=Calendar.WEDNESDAY;
+                    day = Calendar.WEDNESDAY;
                 else if(id==R.id.thursdayCheckBox)
-                    day=Calendar.THURSDAY;
+                    day = Calendar.THURSDAY;
                 else if(id==R.id.fridayCheckBox)
-                    day=Calendar.FRIDAY;
+                    day = Calendar.FRIDAY;
                 else if(id==R.id.saturdayCheckBox)
-                    day=Calendar.SATURDAY;
+                    day = Calendar.SATURDAY;
                 else if(id==R.id.sundayCheckBox)
-                    day=Calendar.SUNDAY;
+                    day = Calendar.SUNDAY;
                 if (isChecked) {
                     if (!selectedDays.contains(day)) {
                         selectedDays.add(day);
